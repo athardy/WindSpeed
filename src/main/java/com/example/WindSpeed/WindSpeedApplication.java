@@ -43,7 +43,7 @@ public class WindSpeedApplication {
 				Report newReport = reportService.getReportByLonAndLat(newGeocode.getLat(), newGeocode.getLon());
 
 				//print report with fields based on is gust data present
-				if (newReport.getWind().getGust() == 0.00) {
+				if (newReport.getWind().getGust() == 0.00 || newReport.getWind().getSpeed() == newReport.getWind().getGust()) {
 					consoleService.printReportNoGusts(newGeocode.getName(), newReport.getWind().getSpeed());
 				} else {
 					consoleService.printReport(newGeocode.getName(), newReport.getWind().getSpeed(), newReport.getWind().getGust());
