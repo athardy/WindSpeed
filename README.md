@@ -1,7 +1,12 @@
+```
+
   _      _______  _____  _______  ___________ 
  | | /| / /  _/ |/ / _ \/ __/ _ \/ __/ __/ _ \
  | |/ |/ // //    / // /\ \/ ___/ _// _// // /
- |__/|__/___/_/|_/____/___/_/  /___/___/____/ 
+ |__/|__/___/_/|_/____/___/_/  /___/___/____/
+
+
+``` 
 
 An application for displaying wind speed to a user by entering a location
 Will be specifically caitered to drone and rc aircraft pilots looking quickly check conditions before flying
