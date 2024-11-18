@@ -3,6 +3,7 @@
  | | /| / /  _/ |/ / _ \/ __/ _ \/ __/ __/ _ \
  | |/ |/ // //    / // /\ \/ ___/ _// _// // /
  |__/|__/___/_/|_/____/___/_/  /___/___/____/
+                                     (v1.1)
 ``` 
 
 An application for displaying wind speed to a user by entering a location.  
