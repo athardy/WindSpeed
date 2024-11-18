@@ -1,20 +1,23 @@
 ```
-
   _      _______  _____  _______  ___________ 
  | | /| / /  _/ |/ / _ \/ __/ _ \/ __/ __/ _ \
  | |/ |/ // //    / // /\ \/ ___/ _// _// // /
  |__/|__/___/_/|_/____/___/_/  /___/___/____/
-
-
 ``` 
 
-An application for displaying wind speed to a user by entering a location
-Will be specifically caitered to drone and rc aircraft pilots looking quickly check conditions before flying
+An application for displaying wind speed to a user by entering a location.  
+Specifically catered to drone and RC aircraft pilots who want to quickly check conditions before flying.
 
-v1.1 A CLI interface that takes a zipcode for input and returns the current wind speed and gust speed if present
-  Built in Java and consumes two APIs: one for geocoding the zipcode input into latitude and longitude, and one for returning the wind data
+## Version 1.1
 
-Possible Future Additions
-  Taking the existing program and mapping it to an API via springboot to eventually connect to a real front-end
-  Adding more API calls and more data to give additional information about airspace, rain conditions, and possibly temp
-  Connecting to a database for favorite locations and history
+- **Interface**: CLI interface that takes a zipcode as input and returns the current wind speed and gust speed (if present).
+- **Built with**: Java
+- **APIs Used**:  
+    1. **Geocoding API**: Converts the zipcode input into latitude and longitude.  
+    2. **Wind Data API**: Provides the current wind speed and gust data.
+
+## Possible Future Additions
+
+- **API Integration**: Expand the existing program and map it to an API using Spring Boot, with the goal of connecting to a real front-end.
+- **Additional Data**: Adding more API calls for airspace information, rain conditions, and possibly temperature data.
+- **Database**: Implementing a database to store favorite locations and history for users.
