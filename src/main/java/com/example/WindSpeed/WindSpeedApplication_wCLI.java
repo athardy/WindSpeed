@@ -1,7 +1,7 @@
 package com.example.WindSpeed;
 
 //@SpringBootApplication
-public class WindSpeedApplication_old {
+public class WindSpeedApplication_wCLI {
 
 	private ConsoleService consoleService = new ConsoleService();
 	private GeocodeService geocodeService = new GeocodeService();
@@ -10,7 +10,7 @@ public class WindSpeedApplication_old {
 	public static void main(String[] args) {
 		//SpringApplication.run(WindSpeedApplication.class, args);
 
-		WindSpeedApplication_old windSpeedApplication = new WindSpeedApplication_old();
+		WindSpeedApplication_wCLI windSpeedApplication = new WindSpeedApplication_wCLI();
 		windSpeedApplication.run();
 	}
 

@@ -12,7 +12,7 @@ public class WindSpeedController {
     private GeocodeService geocodeService;
     @Autowired
     private ReportService reportService;
-    @PostMapping("/wind/{zipCode}")
+    @GetMapping("/wind/{zipCode}")
     public WindResponse windResponse(@PathVariable String zipCode) {
         if (zipCode == null || zipCode.length() != 5) {
             throw new IllegalArgumentException("Invalid zipcode. Must be 5 digits");

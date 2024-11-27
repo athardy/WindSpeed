@@ -20,6 +20,6 @@ Specifically catered to drone and RC aircraft pilots who want to quickly check c
 
 ## Possible Future Additions
 
-- **Front End Integration**: Created a frontend to input zipcode and display wind report
+- **Front End Integration**: Create a frontend for zipcode input and displaying wind report
 - **Additional Data**: Adding more API calls for airspace information, rain conditions, and possibly temperature data.
 - **Database**: Implementing a database to store favorite locations and history for users.
