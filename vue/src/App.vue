@@ -1,10 +1,10 @@
 <template>
-  <header>
+  <header class="app-header">
     <h1>WindSpeed v1.2</h1>
   </header>  
   <div id="app">
-    <Input @wind-data="updateWindData" />
-    <Report :windData="windData"/>
+    <Input class="input-box" @wind-data="updateWindData" />
+    <Report class="report-box" :windData="windData"/>
   </div>
 </template>
 
@@ -31,6 +31,25 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-header {
+  background-color: rgba(169, 169, 169, 0.452);
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.input-box {
+  margin-left: 36%;
+  margin-bottom: 20px;
+}
+
+.report-box {
+  margin-left: 36%;
+}
 
 </style>
-

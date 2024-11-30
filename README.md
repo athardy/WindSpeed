@@ -11,8 +11,8 @@ Specifically catered to drone and RC aircraft pilots who want to quickly check c
 
 ## Version 1.2
 
-- **Interface**: An API endpoint than takes a zipcode as a HTTP parameter and returns a wind report in JSON
-- **Built with**: Java
+- **Frontend**: Built in Vue
+- **Backend**: Built in Java 
 - **APIs Used**:  
     1. **Geocoding API**: Converts the zipcode input into latitude and longitude.  
     2. **Wind Data API**: Provides the current wind speed and gust data.
@@ -20,7 +20,6 @@ Specifically catered to drone and RC aircraft pilots who want to quickly check c
 
 ## Possible Future Additions
 
-- **Better UI**: Style frontend with CSS
 - **Friendlier UX**: Add more ways to receive report: zipcode, city + state, current location
 - **Additional Data**: Adding more API calls for airspace information, rain conditions, and possibly temperature data.
 - **Database**: Implementing a database to store favorite locations and history for users (would require login)
