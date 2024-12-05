@@ -1,4 +1,4 @@
-package com.example.WindSpeed;
+package com.example.WindSpeed.service;
 
 import java.util.Scanner;
 

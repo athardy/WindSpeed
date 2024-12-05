@@ -1,15 +1,17 @@
 package com.example.WindSpeed;
 
-//@SpringBootApplication
-public class WindSpeedApplication_wCLI {
+import com.example.WindSpeed.model.Geocode;
+import com.example.WindSpeed.model.Report;
+import com.example.WindSpeed.service.ConsoleService;
+import com.example.WindSpeed.service.GeocodeService;
+import com.example.WindSpeed.service.ReportService;
 
+public class WindSpeedApplication_wCLI {
 	private ConsoleService consoleService = new ConsoleService();
 	private GeocodeService geocodeService = new GeocodeService();
 	private ReportService reportService = new ReportService();
 
 	public static void main(String[] args) {
-		//SpringApplication.run(WindSpeedApplication.class, args);
-
 		WindSpeedApplication_wCLI windSpeedApplication = new WindSpeedApplication_wCLI();
 		windSpeedApplication.run();
 	}

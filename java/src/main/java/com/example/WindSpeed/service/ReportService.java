@@ -1,6 +1,6 @@
-package com.example.WindSpeed;
+package com.example.WindSpeed.service;
 
-import org.springframework.http.HttpEntity;
+import com.example.WindSpeed.model.Report;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;

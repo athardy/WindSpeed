@@ -1,5 +1,6 @@
-package com.example.WindSpeed;
+package com.example.WindSpeed.service;
 
+import com.example.WindSpeed.model.Geocode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;

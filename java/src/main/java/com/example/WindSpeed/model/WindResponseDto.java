@@ -1,11 +1,11 @@
-package com.example.WindSpeed;
+package com.example.WindSpeed.model;
 
-public class WindResponse {
+public class WindResponseDto {
     private String location;
     private double windSpeed;
     private Double windGust; //nullable to indicate absence of gusts | might be checked on frontend
 
-    public WindResponse(String location, double windSpeed, Double windGust) {
+    public WindResponseDto(String location, double windSpeed, Double windGust) {
         this.location = location;
         this.windSpeed = windSpeed;
         this.windGust = windGust;
