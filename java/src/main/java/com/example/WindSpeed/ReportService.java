@@ -1,6 +1,7 @@
-package com.example.WindSpeed.service;
+package com.example.WindSpeed;
 
-import com.example.WindSpeed.model.Report;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
@@ -8,9 +9,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ReportService {
+    @Value("${app.report.api.url}")
+    private String API_BASE_URL;
 
-    private final String API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
-    private final String API_KEY = "f078ca176c8b3ef2233c682be77ba072";
+    @Value("${app.owm.api.key}")
+    private String API_KEY;
+
     private final RestTemplate restTemplate = new RestTemplate();
 
     //method to get wind data from latitude and longitude input via API

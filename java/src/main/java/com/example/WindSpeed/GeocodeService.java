@@ -1,6 +1,6 @@
-package com.example.WindSpeed.service;
+package com.example.WindSpeed;
 
-import com.example.WindSpeed.model.Geocode;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
@@ -8,8 +8,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class GeocodeService {
-    private final String API_BASE_URL = "http://api.openweathermap.org/geo/1.0/zip";
-    private final String API_KEY = "f078ca176c8b3ef2233c682be77ba072";
+    @Value("${app.geocode.api.url}")
+    private String API_BASE_URL;
+
+    @Value("${app.owm.api.key}")
+    private String API_KEY;
+
     private final RestTemplate restTemplate = new RestTemplate();
 
     //method to get latitude and longitude from zipcode input via API

@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class WindSpeedApplication {
+public class Application {
 	public static void main(String[] args) {
-		SpringApplication.run(WindSpeedApplication.class, args);
+		SpringApplication.run(Application.class, args);
 		System.out.println(" _      _______  _____  _______  ___________");
 		System.out.println("| | /| / /  _/ \\/ / _ \\/ __/ _ \\/ __/ __/ _ \\");
 		System.out.println("| |/ |/ // //    / // /\\ \\/ ___/ _// _// // /");

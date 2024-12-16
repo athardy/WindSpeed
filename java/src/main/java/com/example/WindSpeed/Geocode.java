@@ -1,4 +1,4 @@
-package com.example.WindSpeed.model;
+package com.example.WindSpeed;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
