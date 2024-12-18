@@ -1,13 +1,19 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: import.meta.env.VITE_REMOTE_API
 });
 
 export default {
 
-    get(zipCode) {
-        return http.get(`/api/wind/${zipCode}`);
+    getByZip(zipCode) {
+        return http.get(`/wind/zip/${zipCode}`);
+    },
+    
+    getByCoordinates(lat, lon) {
+        return http.get('wind/coordinates', {
+            params: {lat, lon}
+        });
     }
 }
 

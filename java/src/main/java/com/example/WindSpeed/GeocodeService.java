@@ -34,19 +34,19 @@ public class GeocodeService {
     }
 
     //possible future method (implementation) for city/state
-    public Geocode getLatAndLonFromCityState(String city, String state) {
-        Geocode geocode = null;
-        try {
-            geocode = restTemplate.getForObject(API_BASE_URL + "direct?q=" + city + "," + state + "&appid=" + API_KEY, Geocode.class);
-        } catch (RestClientResponseException e) {
-            System.out.println();
-            System.out.println(e.getStatusCode() + ": Could not access data (Zipcode is invalid)");
-            System.out.println();
-        } catch (ResourceAccessException e) {
-            System.out.println();
-            System.out.println(e.getMessage());
-            System.out.println();
-        }
-        return geocode;
-    }
+//    public Geocode getLatAndLonFromCityState(String city, String state) {
+//        Geocode geocode = null;
+//        try {
+//            geocode = restTemplate.getForObject(API_BASE_URL + "direct?q=" + city + "," + state + "&appid=" + API_KEY, Geocode.class);
+//        } catch (RestClientResponseException e) {
+//            System.out.println();
+//            System.out.println(e.getStatusCode() + ": (City,State is invalid)");
+//            System.out.println();
+//        } catch (ResourceAccessException e) {
+//            System.out.println();
+//            System.out.println(e.getMessage());
+//            System.out.println();
+//        }
+//        return geocode;
+//    }
 }

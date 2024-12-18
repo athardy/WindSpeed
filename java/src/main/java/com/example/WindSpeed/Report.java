@@ -6,8 +6,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Report {
 
+
+
+    @JsonProperty("name")
+    private String name;
+
     @JsonProperty("wind")
     private Wind wind;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Wind getWind() {
         return wind;
