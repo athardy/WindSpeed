@@ -28,9 +28,9 @@ public class WindSpeedController {
         Report report = reportService.getReportByLonAndLat(geocode.getLat(), geocode.getLon());
         //check might be better implemented on frontend
         if (report.getWind().getGust() == 0.00) {
-            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), null);
+            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), null, report.getWind().degToString());
         } else {
-            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), report.getWind().getGust());
+            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), report.getWind().getGust(), report.getWind().degToString());
         }
     }
 
@@ -43,9 +43,9 @@ public class WindSpeedController {
         Report report = reportService.getReportByLonAndLat(lat, lon);
         //check might be better implemented on frontend
         if (report.getWind().getGust() == 0.00) {
-            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), null);
+            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), null, report.getWind().degToString());
         } else {
-            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), report.getWind().getGust());
+            return new WindResponseDto(report.getName(), report.getWind().getSpeed(), report.getWind().getGust(), report.getWind().degToString());
         }
     }
 }

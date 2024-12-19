@@ -4,11 +4,13 @@ public class WindResponseDto {
     private String location;
     private double windSpeed;
     private Double windGust; //nullable to indicate absence of gusts | might be checked on frontend
+    private String windDeg;
 
-    public WindResponseDto(String location, double windSpeed, Double windGust) {
+    public WindResponseDto(String location, double windSpeed, Double windGust, String windDeg) {
         this.location = location;
         this.windSpeed = windSpeed;
         this.windGust = windGust;
+        this.windDeg = windDeg;
     }
 
     public String getLocation() {
@@ -21,5 +23,9 @@ public class WindResponseDto {
 
     public Double getWindGust() {
         return windGust;
+    }
+
+    public String getWindDeg() {
+        return windDeg;
     }
 }

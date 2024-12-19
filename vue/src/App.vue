@@ -1,6 +1,6 @@
 <template>
   <div class="device-overlay">
-    <h1>WindSpeed v1.2</h1>
+    <h1>WindSpeed v1.3</h1>
     <div id="app">
       <Report 
         class="report-box" 
@@ -57,7 +57,7 @@ body {
 .device-overlay {
   border-radius: 10px;
   background-color: gray;
-  width: 350px;
+  width: 340px;
   height: 360px;
   display: flex;
   flex-direction: column;
@@ -70,6 +70,6 @@ body {
 h1 {
   color: white;
   margin: 0; 
-}
+} 
 
 </style>

@@ -1,10 +1,17 @@
 <template>
   <div class="input-box">
-    <input 
-      v-model="zipCode" 
-      type="text" 
-      placeholder="Enter ZIP code" 
-    />
+    <div class="input-compass-container">
+      <input 
+        v-model="zipCode" 
+        type="text" 
+        placeholder="Enter ZIP code" 
+        @keyup.enter="fetchWindDataByZip"
+      />
+      <div class="compass-display"
+      >
+        <img :src="windDirectionImg" alt="Compass Direction" v-if="windDirectionImg"/>
+      </div>
+    </div>
     <div class="button-container">
       <button @click="fetchWindDataByZip">Search by ZIP</button>
       <button @click="fetchWindDataByLocation">Current Location</button>
@@ -19,7 +26,8 @@ export default {
   data() {
     return {
       zipCode: '',
-      errorMessage: '', // Track error messages
+      windDirectionImg: 'direction_default.gif', // Holds the image URL dynamically and dispalys the default image otherwise
+      errorMessage: '', // Tracks error messages
     };
   },
   methods: {
@@ -30,12 +38,32 @@ export default {
         .then(response => {
           this.$emit('wind-data', response.data); // Pass wind data to parent
           this.$emit('error-message', ''); // Clear any previous error
+
+          // Dynamically update compass image based on wind direction
+          this.updateWindDirection(response.data.windDeg);
         })
         .catch(error => {
           console.error('Error fetching wind data:', error);
           this.$emit('wind-data', null); // Clear wind data
           this.$emit('error-message', 'Failed to fetch wind data. Please check the ZIP code and try again.');
+          this.windDirectionImg = '/direction_default.gif'; // Reset to default image
         });
+    },
+
+    // Update compass image based on wind direction
+    updateWindDirection(windDeg) {
+      const windDirectionMap = {
+        N: '/direction_n.gif',
+        NE: '/direction_ne.gif',
+        E: '/direction_e.gif',
+        SE: '/direction_se.gif',
+        S: '/direction_s.gif',
+        SW: '/direction_sw.gif',
+        W: '/direction_w.gif',
+        NW: '/direction_nw.gif',
+      };
+
+      this.windDirectionImg = windDirectionMap[windDeg] || null; // Set image or null if no match
     },
 
     // Fetch wind data using current location
@@ -49,10 +77,12 @@ export default {
           (error) => {
             console.error('Error getting location:', error.message);
             this.$emit('error-message', 'Unable to retrieve location. Please allow location access.');
+            this.windDirectionImg = '/direction_default.gif'; // Reset to default image
           }
         );
       } else {
         this.$emit('error-message', 'Geolocation is not supported by your browser.');
+        this.windDirectionImg = '/direction_default.gif'; // Reset to default image
       }
     },
 
@@ -63,14 +93,18 @@ export default {
         .then(response => {
           this.$emit('wind-data', response.data);
           this.$emit('error-message', '');
+
+          // Dynamically update compass image based on wind direction
+          this.updateWindDirection(response.data.windDeg);
         })
         .catch(error => {
           console.error('Error fetching wind data by location:', error);
           this.$emit('wind-data', null);
           this.$emit('error-message', 'Failed to fetch wind data for your location. Please try again.');
+          this.windDirectionImg = '/direction_default.gif'; // Reset to default image
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -80,18 +114,39 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+}
+
+.input-compass-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  gap: 10px; /* Add space between the input and compass */
 }
 
 input {
-  width: 280px;
+  width: 232px;
   border: none;
   border-radius: 4px;
   background-color: #222;
   color: rgb(126, 255, 126);
   font-size: 16px;
-  margin-bottom: 20px;
   padding: 10px;
+}
+
+.compass-display {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  background-color: #222;
+
+}
+
+.compass-display img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
 .button-container {
@@ -99,6 +154,7 @@ input {
   gap: 10px; /* Creates equal space between the buttons */
   justify-content: center;
   width: 300px;
+  margin-top: 20px;
 }
 
 button {
@@ -119,3 +175,4 @@ button:hover {
   color: rgb(126, 255, 126);
 }
 </style>
+
